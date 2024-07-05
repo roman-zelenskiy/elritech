@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply leading-[100%];
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  button {
+    @apply leading-[100%];
+  }
+  .container {
+    @apply !max-w-screen-5xl;
+  }
+  .no_scroll_bar::-webkit-scrollbar {
+    width: 0;
+  }
+  .scroll_bar {
+    scrollbar-width: 3px;
+    scrollbar-color: #c8c8be #c8c8be;
+  }
+  .scroll_bar::-webkit-scrollbar {
+    width: 0;
+  }
+  .scroll_bar::-webkit-scrollbar {
+    width: 7px;
+    height: 10px;
+  }
+  .scroll_bar::-webkit-scrollbar-thumb {
+    background-color: #c8c8be;
+    border-radius: 20px;
+  }
+
+  body {
+    @apply font-primary;
+  }
+  .input_without_arrow::-webkit-outer-spin-button,
+  .input_without_arrow::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .input_without_arrow[type='number'] {
+    -moz-appearance: textfield;
+  }
+  .container-reset {
+    @apply w-full !max-w-none p-0;
+  }
+
+  input[type='password'] {
+    font-family: sans-serif;
+  }
+}
+
+@layer components {
+  .button_opacity {
+    @apply duration-hover is-hover:hover:opacity-hover;
+  }
+
+  .input_outline {
+    @apply w-full border border-white bg-transparent px-[6px] py-[15px] text-[10px] uppercase text-white placeholder:text-[#898989] focus:outline-none md:border-[2px] md:px-[13px]  md:text-[14px] xl:px-[17px] xl:py-[17px] xl:text-[16px] 4xl:text-[20px];
+  }
+}
