@@ -8,12 +8,11 @@
 
   const settingCarousel = () => {
     const cardsArray = gsap.utils.toArray('.creative_pro');
-    const textCardsArray = gsap.utils.toArray('.text_card');
     gsap.registerPlugin(Draggable, InertiaPlugin);
 
-    const proxy = document.createElement('div'); // just a dummy element that'll get dragged, but we don't care about it.
+    const proxy = document.createElement('div');
     const progressWrap = gsap.utils.wrap(0, 1);
-    let startProgress;
+    let startProgress: any;
     const dragDistancePerRotation = 3000;
     const spin = gsap.fromTo(
       cardsArray,
@@ -28,31 +27,30 @@
         transformOrigin: `50% 50% ${-radiusCarousel.value}px`,
       }
     );
-    function updateRotation() {
+
+    function updateRotation(this: Draggable) {
       const p = startProgress + (this.startX - this.x) / dragDistancePerRotation;
       spin.progress(progressWrap(p));
     }
 
     Draggable.create(proxy, {
-      trigger: '.demo_wrapper', // activate the dragging when the user presses on the .demo_wrapper
-      type: 'x', // we only care about movement on the x-axis.
+      trigger: '.demo_wrapper',
+      type: 'x',
       inertia: true,
       allowNativeTouchScrolling: false,
       onPress() {
-        gsap.killTweensOf(spin); // if it's in the middle of animating the spin back to timeScale: 1, kill that.
-        spin.timeScale(0); // stop the spin.
-        startProgress = spin.progress(); // remember the current progress value because we'll make the drag relative to that.
+        gsap.killTweensOf(spin);
+        spin.timeScale(0);
+        startProgress = spin.progress();
       },
       onDrag: updateRotation,
       onThrowUpdate: updateRotation,
       onRelease() {
         if (!this.tween || !this.tween.isActive()) {
-          // if the user clicked and released (no inertia flick), resume the spin
           gsap.to(spin, { timeScale: 1, duration: 1 });
         }
       },
       onThrowComplete() {
-        // resume the spin after the inertia tween finishes
         gsap.to(spin, { timeScale: 1, duration: 1 });
       },
     });
@@ -78,7 +76,7 @@
     }
   };
 
-  watchDeep(screenWidth, () => {
+  watch(screenWidth, () => {
     changeRadiusCarousel();
     settingCarousel();
   });
@@ -106,7 +104,6 @@
             <div
               class="text_card absolute bottom-0 z-50 mb-[clamp(50px,20vw,90px)] flex flex-col gap-[10px]"
             >
-              <!-- <div class="absolute left-0 top-0 size-full bg-black z-[-1]" /> -->
               <p class="text-[20px] md:text-[26px] xl:text-[35px] 4xl:text-[52px]">
                 {{ item.name }}
               </p>
@@ -114,7 +111,6 @@
                 {{ item.position }}
               </p>
             </div>
-            <!-- <div class="bg-black absolute left-0 top-0 size-full" /> -->
           </div>
         </div>
       </div>
@@ -136,9 +132,5 @@
     right: 0;
     margin: auto;
     overflow: hidden;
-  }
-
-  .creative_pro {
-    /* background: transparent; */
   }
 </style>

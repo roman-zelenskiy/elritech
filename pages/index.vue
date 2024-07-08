@@ -1,11 +1,13 @@
 <!-- eslint-disable import/no-extraneous-dependencies -->
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import SectionsScroll from '../components/pages/SectionsScroll.vue';
+</script>
 
 <template>
   <div>
     <CommonSectionMain />
 
-    <PagesSectionsScroll />
+    <SectionsScroll />
 
     <div class="bg_sections relative overflow-hidden bg-[#111111]">
       <div

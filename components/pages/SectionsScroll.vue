@@ -1,12 +1,10 @@
 <script setup lang="ts">
-  // import { gsap } from 'gsap';
-  // import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  const { $gsap: gsap, $Draggable: Draggable, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
+  const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
   gsap.registerPlugin(ScrollTrigger);
 
   onMounted(() => {
-    gsap.utils.toArray('.section_animate').forEach((section: any, index) => {
+    gsap.utils.toArray('.section_animate').forEach((section: any) => {
       gsap.to(section, {
         ease: 'none',
         scrollTrigger: {
