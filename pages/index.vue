@@ -6,7 +6,7 @@
   <div>
     <CommonSectionMain />
 
-    <SectionsScroll />
+    <PagesSectionsScroll />
 
     <div class="bg_sections relative overflow-hidden bg-[#111111]">
       <div
