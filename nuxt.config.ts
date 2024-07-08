@@ -35,6 +35,9 @@ export default defineNuxtConfig({
   pinia: {
     storesDirs: ['./stores/**'],
   },
+  router: {
+    base: '/elritech/',
+  },
   app: {
     head: {
       title: 'ELRITECH',
