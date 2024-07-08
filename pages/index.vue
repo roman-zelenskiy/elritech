@@ -1,6 +1,5 @@
 <!-- eslint-disable import/no-extraneous-dependencies -->
 <script setup lang="ts">
-  import SectionsScroll from '../components/pages/SectionsScroll.vue';
 </script>
 
 <template>
