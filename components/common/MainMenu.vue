@@ -8,11 +8,11 @@
     },
     {
       label: 'about us',
-      link: '/about',
+      link: '/',
     },
     {
       label: 'process',
-      link: '/process',
+      link: '/',
     },
   ];
 </script>
@@ -29,7 +29,7 @@
             }
           )
         "
-        :to="item.label"
+        :to="item.link"
         >{{ item.label }}</UiButton
       >
     </li>

@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
@@ -21,7 +20,8 @@ export default defineNuxtConfig({
       'mousewheel',
     ],
   },
-  // ssr: false,
+  // Включите генерацию статических файлов
+  target: 'static',
   css: ['~/assets/css/fonts.css'],
   alias: {
     '@img': './assets/img',
