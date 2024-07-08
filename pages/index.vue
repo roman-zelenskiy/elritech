@@ -1,6 +1,5 @@
 <!-- eslint-disable import/no-extraneous-dependencies -->
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>
