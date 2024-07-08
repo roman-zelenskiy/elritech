@@ -20,8 +20,6 @@ export default defineNuxtConfig({
       'mousewheel',
     ],
   },
-  // Включите генерацию статических файлов
-  target: 'static',
   css: ['~/assets/css/fonts.css'],
   alias: {
     '@img': './assets/img',
