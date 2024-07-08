@@ -1,10 +1,9 @@
-# https://github.com/actions/deploy-pages#usage
 name: Deploy to GitHub Pages
 on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
