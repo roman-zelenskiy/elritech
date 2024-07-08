@@ -1,10 +1,10 @@
 <script setup lang="ts">
   const teams = [
     {
-      img: '/img/size.webp',
+      img: useBaseUrl('/img/size.webp'),
     },
     {
-      img: '/img/ukrainemart.webp',
+      img: useBaseUrl('/img/ukrainemart.webp'),
     },
   ];
 </script>

@@ -100,7 +100,11 @@
             :key="index"
             class="card_person box_person creative_pro relative flex w-[clamp(165px,20vw,300px)] flex-1 flex-col justify-end px-[13px] pt-[342px] text-white md:px-[15px] md:pt-[500px] xl:px-[25px] xl:pt-[600px] 4xl:px-[30px]"
           >
-            <img class="absolute left-0 top-0 size-full object-cover" :src="item.img" alt="" />
+            <img
+              class="absolute left-0 top-0 size-full object-cover"
+              :src="useBaseUrl(item.img)"
+              alt=""
+            />
             <div
               class="text_card absolute bottom-0 z-50 mb-[clamp(50px,20vw,90px)] flex flex-col gap-[10px]"
             >

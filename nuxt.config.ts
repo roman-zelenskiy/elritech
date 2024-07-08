@@ -1,11 +1,14 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   runtimeConfig: {
     public: {
-      url: process.env.NUXT_URL,
+      baseUrl: process.env.NUXT_APP_BASE_URL,
     },
   },
+
   modules: ['@nuxt/ui', 'nuxt-svgo', '@pinia/nuxt', '@vueuse/nuxt', 'nuxt-swiper'],
+
   swiper: {
     modules: [
       'navigation',
@@ -20,19 +23,25 @@ export default defineNuxtConfig({
       'mousewheel',
     ],
   },
+
   css: ['~/assets/css/fonts.css'],
+
   alias: {
     '@img': './assets/img',
   },
+
   svgo: {
     autoImportPath: './assets/img/svg/',
   },
+
   colorMode: {
     preference: 'light',
   },
+
   pinia: {
     storesDirs: ['./stores/**'],
   },
+
   app: {
     head: {
       title: 'ELRITECH',
@@ -43,7 +52,9 @@ export default defineNuxtConfig({
         },
       ],
     },
-    baseURL: '/elritech/',
+    baseURL: process.env.NUXT_APP_BASE_URL,
     buildAssetsDir: 'assets',
   },
+
+  compatibilityDate: '2024-07-09',
 });
