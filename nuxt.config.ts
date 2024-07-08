@@ -44,6 +44,6 @@ export default defineNuxtConfig({
       ],
     },
     baseURL: '/elritech/',
-    // buildAssetsDir: 'assets',
+    buildAssetsDir: 'assets',
   },
 });
